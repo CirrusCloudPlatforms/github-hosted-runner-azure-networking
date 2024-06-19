@@ -8,7 +8,7 @@ param secretValue string
 var keyVaultRoleAssignments = [
   // Provide RBAC to the key vault for the GitHub Service Principal
   {
-    principalId: '6881facc-b572-47b8-9e2e-01075a224741'
+    principalId: '7a24069e-6afc-4ce9-9364-393c3929f76d'
     roleDefinitionIdOrName: 'Key Vault Secrets Officer'
     principalType: 'ServicePrincipal'
   }

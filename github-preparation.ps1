@@ -12,7 +12,7 @@ $env:VNET_NAME = "gh-runner-demo-vnet-001"
 $env:SUBNET_NAME = "gh-runner-demo-subnet-002"
 $env:NSG_NAME = "gh-runner-demo-nsg-001"
 $env:NETWORK_SETTINGS_RESOURCE_NAME = "gh-runner-demo-network-settings-001"
-$env:DATABASE_ID = "166257474"
+$env:DATABASE_ID = "172034305"
 # $env:ADDRESS_PREFIX = "10.0.0.0/16"
 # $env:SUBNET_PREFIX = "10.0.0.0/24"
 

@@ -5,16 +5,16 @@
 $ErrorActionPreference = "Stop"
 
 # Set environment variables
-$env:AZURE_LOCATION = "australiaeast"
-$env:SUBSCRIPTION_ID = "8c6ccaa9-9f43-4f74-a91e-12a9f922d72c"
-$env:RESOURCE_GROUP_NAME = "gh-runner-demo-rg-001"
-$env:VNET_NAME = "gh-runner-demo-vnet-001"
-$env:SUBNET_NAME = "gh-runner-demo-subnet-002"
-$env:NSG_NAME = "gh-runner-demo-nsg-001"
-$env:NETWORK_SETTINGS_RESOURCE_NAME = "gh-runner-demo-network-settings-001"
+$env:AZURE_LOCATION = "uksouth"
+$env:SUBSCRIPTION_ID = "ae68c399-6a9a-467b-9192-61e294da12e1"
+$env:RESOURCE_GROUP_NAME = "cf-gh-runner-demo-rg-001"
+$env:VNET_NAME = "cf-gh-runner-demo-vnet-001"
+$env:SUBNET_NAME = "cf-gh-runner-demo-subnet-002"
+$env:NSG_NAME = "cf-gh-runner-demo-nsg-001"
+$env:NETWORK_SETTINGS_RESOURCE_NAME = "cf-gh-runner-demo-network-settings-001"
 $env:DATABASE_ID = "172034305"
-# $env:ADDRESS_PREFIX = "10.0.0.0/16"
-# $env:SUBNET_PREFIX = "10.0.0.0/24"
+$env:ADDRESS_PREFIX = "10.0.0.0/16"
+$env:SUBNET_PREFIX = "10.0.0.0/24"
 
 # Log in to Azure (this may require manual interaction)
 Write-Output "Login to Azure"

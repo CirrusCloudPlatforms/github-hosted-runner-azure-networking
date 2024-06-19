@@ -12,13 +12,13 @@ $env:VNET_NAME = "cf-gh-runner-demo-vnet-001"
 $env:SUBNET_NAME = "cf-gh-runner-demo-subnet-002"
 $env:NSG_NAME = "cf-gh-runner-demo-nsg-001"
 $env:NETWORK_SETTINGS_RESOURCE_NAME = "cf-gh-runner-demo-network-settings-001"
-$env:DATABASE_ID = "172034305"
+$env:DATABASE_ID = "173159522"
 $env:ADDRESS_PREFIX = "10.0.0.0/16"
 $env:SUBNET_PREFIX = "10.0.0.0/24"
 
 # Log in to Azure (this may require manual interaction)
 Write-Output "Login to Azure"
-az login --output none
+#az login --output none
 
 # Set account context
 Write-Output "Set account context $env:SUBSCRIPTION_ID"
@@ -28,7 +28,7 @@ az account set --subscription $env:SUBSCRIPTION_ID
 Write-Output "Register resource provider GitHub.Network"
 az provider register --namespace GitHub.Network
 
-# Create resource group
+# Create resource group.
 # Write-Output "Create resource group $env:RESOURCE_GROUP_NAME at $env:AZURE_LOCATION"
 # az group create --name $env:RESOURCE_GROUP_NAME --location $env:AZURE_LOCATION
 

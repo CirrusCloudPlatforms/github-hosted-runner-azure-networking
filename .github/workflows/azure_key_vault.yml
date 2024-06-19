@@ -10,7 +10,7 @@ on:
       keyVaultName:
           description: 'Name of the Azure Key Vault'
           required: true
-          default: 'gh-runner-demo-kv-001' # You can set a default name or leave this empty
+          default: 'cf-gh-runner-demo-kv-001' # You can set a default name or leave this empty
 
 permissions:
   id-token: write
@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   retrieve-secret:
-    runs-on: ubuntu-latest
+    runs-on: cf-code-linux-runner
 
     steps:
       - name: Checkout repository

@@ -1,4 +1,4 @@
-param location string = 'australiaeast'
+param location string = 'uksouth'
 
 @secure()
 param secretValue string
@@ -8,20 +8,20 @@ param secretValue string
 var keyVaultRoleAssignments = [
   // Provide RBAC to the key vault for the GitHub Service Principal
   {
-    principalId: 'cbd79400-cab6-4568-93fd-36a676a09f0f'
+    principalId: '6881facc-b572-47b8-9e2e-01075a224741'
     roleDefinitionIdOrName: 'Key Vault Secrets Officer'
     principalType: 'ServicePrincipal'
   }
   // Provide RBAC to the key vault for my user account
   {
-    principalId: 'e22e2af2-e4ce-409c-8b57-cd6a1f3e1ac2'
+    principalId: 'fdbbd55d-591d-416a-9b45-8cd102d8b051'
     roleDefinitionIdOrName: 'Key Vault Secrets Officer'
     principalType: 'User'
   }
 ]
 
 // This is used in the naming standard of all resources
-var resourcePrefix = 'gh-runner-demo'
+var resourcePrefix = 'cf-gh-runner-demo'
 
 targetScope = 'subscription'
 

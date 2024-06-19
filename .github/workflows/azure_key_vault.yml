@@ -22,7 +22,7 @@ permissions:
 
 jobs:
   retrieve-secret:
-    runs-on: cf-code-linux-runner
+    runs-on: ${{ github.event.inputs.runner }}
 
     steps:
       - name: Checkout repository

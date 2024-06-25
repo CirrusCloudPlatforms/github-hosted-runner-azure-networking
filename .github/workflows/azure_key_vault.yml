@@ -12,9 +12,9 @@ on:
           required: true
           default: 'azt1kvuksappdevgitlock' # You can set a default name
       runner:
-          description: 'The type of runner to use, ''azt1-npd-cirrus'', ''cirrus-ubuntu-22.04-2-core'' or ''ubuntu-latest'''
+          description: 'The type of runner to use, ''cirrus-ubuntu-22.04-2-core'' or ''ubuntu-latest'''
           required: true
-          default: azt1-npd-cirrus 
+          default: cirrus-ubuntu-22.04-2-core 
 
 permissions:
   id-token: write

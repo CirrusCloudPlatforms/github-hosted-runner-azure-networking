@@ -6,15 +6,15 @@ on:
       secretName:
         description: 'Name of the secret in Azure Key Vault'
         required: true
-        default: 'mySuperSecret' # You can set a default secret name or leave this empty
+        default: 'mySuperSecret' # You can set a default secret name 
       keyVaultName:
           description: 'Name of the Azure Key Vault'
           required: true
-          default: 'cf-gh-runner-demo-kv-001' # You can set a default name or leave this empty
+          default: 'azt1kvuksappdevgitlock' # You can set a default name
       runner:
-          description: 'The type of runner to use, ''cf-code-linux-runner'' or ''ubuntu-latest'''
+          description: 'The type of runner to use, ''azt1-npd-cirrus'', ''cirrus-ubuntu-22.04-2-core'' or ''ubuntu-latest'''
           required: true
-          default: cf-code-linux-runner # You can set a default runner or leave this empty
+          default: azt1-npd-cirrus 
 
 permissions:
   id-token: write

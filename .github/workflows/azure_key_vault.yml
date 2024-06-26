@@ -10,7 +10,7 @@ on:
       keyVaultName:
           description: 'Name of the Azure Key Vault'
           required: true
-          default: 'azt1kvuksappdevgitlock' # You can set a default name
+          default: 'azt1kvuksdmsdevgitlock' # You can set a default name
       runner:
           description: 'The type of runner to use, ''cirrus-ubuntu-22.04-2-core'' or ''ubuntu-latest'''
           required: true

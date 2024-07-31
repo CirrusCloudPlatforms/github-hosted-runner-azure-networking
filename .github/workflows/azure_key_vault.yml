@@ -7,10 +7,6 @@ on:
         description: 'Name of the secret in Azure Key Vault'
         required: true
         default: 'mySuperSecret' # You can set a default secret name 
-      keyVaultName:
-          description: 'Name of the Azure Key Vault'
-          required: true
-          default: 'azt1kvuksdmsdevgitlock' # You can set a default name
       runner:
           description: 'The type of runner to use, ''cirrus-ubuntu-22.04-2-core'' or ''ubuntu-latest'''
           required: true
@@ -21,7 +17,7 @@ permissions:
   contents: read
 
 jobs:
-  retrieve-secret:
+  retrieve-dms-secret:
     runs-on: ${{ github.event.inputs.runner }}
 
     steps:
@@ -31,13 +27,35 @@ jobs:
       - name: Setup Azure CLI
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          client-id: ${{ secrets.AZURE_DMS_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          subscription-id: ${{ secrets.AZURE_DMS_SUBSCRIPTION_ID }}
 
-      - name: Retrieve secret from Azure Key Vault
+      - name: Retrieve secret from Azure  DMS Subscription Key Vault
         run: |
-          secretValue=$(az keyvault secret show --name ${{ github.event.inputs.secretName }} --vault-name ${{ github.event.inputs.keyVaultName }} --query value -o tsv)
+          secretValue=$(az keyvault secret show --name ${{ github.event.inputs.secretName }} --vault-name "azt1kvuksdmsdevgitlock" --query value -o tsv)
+          echo "SECRET_VALUE=$secretValue" >> $GITHUB_ENV
+
+      - name: Display the secret (for demonstration only)
+        run: echo "The secret is $SECRET_VALUE"
+
+  retrieve-app-secret:
+    runs-on: ${{ github.event.inputs.runner }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Azure CLI
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_APP_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_APP_SUBSCRIPTION_ID }}
+
+      - name: Retrieve secret from Azure App Subscription Key Vault
+        run: |
+          secretValue=$(az keyvault secret show --name ${{ github.event.inputs.secretName }} --vault-name "azt1kvuksappdevgitlock" --query value -o tsv)
           echo "SECRET_VALUE=$secretValue" >> $GITHUB_ENV
 
       - name: Display the secret (for demonstration only)
